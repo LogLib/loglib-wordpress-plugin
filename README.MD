@@ -47,7 +47,7 @@ If you encounter any issues or have questions regarding the Loglib plugin, you c
 ## License
 
 GNU GENERAL PUBLIC LICENSE
-Version 2, June 1991
+Version 2, June 2023
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License version 2,
