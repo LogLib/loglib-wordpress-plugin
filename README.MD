@@ -46,4 +46,14 @@ If you encounter any issues or have questions regarding the Loglib plugin, you c
 
 ## License
 
-Loglib is released under the [GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.en.html). Feel free to modify and customize the plugin according to your needs.
+GNU GENERAL PUBLIC LICENSE
+Version 2, June 1991
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License version 2,
+as published by the Free Software Foundation.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
