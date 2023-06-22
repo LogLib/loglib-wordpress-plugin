@@ -1,7 +1,7 @@
 <?php
 /*
-Plugin Name: LogLib
-Plugin URI: https://loglib.com/plugin
+Plugin Name: Loglib
+Plugin URI: https://loglib.io/plugin
 Description: a web analytics platform.
 Version: 1.0.0
 Author: Getasew
@@ -12,8 +12,8 @@ License: GPL2
 // Add settings page to WordPress dashboard
 function loglib_add_settings_page() {
     add_options_page(
-        'LogLib', // Page title
-        'LogLib', // Menu title
+        'Loglib', // Page title
+        'Loglib', // Menu title
         'manage_options', // Capability required to access the page
         'loglib-settings', // Menu slug
         'loglib_render_settings_page' // Callback function to render the page content
@@ -25,7 +25,7 @@ add_action('admin_menu', 'loglib_add_settings_page');
 function loglib_render_settings_page() {
     ?>
     <div class="wrap">
-        <h1>LogLib Settings</h1>
+        <h1>Loglib Settings</h1>
         <form method="post" action="<?php echo plugin_dir_url(__FILE__) . 'handle_form.php'; ?>">
             <?php
             // Output the settings fields
@@ -76,7 +76,7 @@ add_action('admin_init', 'loglib_register_settings');
 
 // Render the settings section content
 function loglib_render_section() {
-    echo 'LogLib setting section to enter your LogLib id and LogLib host.';
+    echo 'Loglib setting section to enter your Loglib id and Loglib host.';
 }
 
 // Render the settings field content
@@ -87,7 +87,7 @@ function loglib_render_field() {
 // Render the settings field content
 function loglib_render_id_field() {
     $value = get_option('loglib-settings');
-    echo '<input type="text" name="loglib_id" value="' . esc_attr($value['loglib_id']) . '" required/>';
+    echo '<input type="text" name="loglib_id" value="' . esc_attr($value['loglib_id']) . '"/>';
 }
 // Validate the settings
 function loglib_validate_settings($input) {
@@ -103,7 +103,7 @@ function loglib_inject_html_tag() {
     $data = json_decode($jsonData);
 
     $host=isset($data->host)?$data->host:"https://loglib.io";
-    $id=isset($data->id)?$data->id:"https://loglib.io";
+    $id=isset($data->id)?$data->id:"";
     
     // https://loglib-next13.vercel.app/
     echo '<script>
@@ -115,7 +115,7 @@ function loglib_inject_html_tag() {
     const a = document.getElementsByTagName("script")[0];
     a.parentNode.insertBefore(r, a);
     r.onload = () => {
-      loglib.record({ host:"'. $host .'"});
+      loglib.record({ host:"'. $host .'",id:"'.$id.'"});
     };
   </script>';
 }
