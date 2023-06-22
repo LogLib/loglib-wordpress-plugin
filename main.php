@@ -91,7 +91,6 @@ function loglib_render_id_field() {
 }
 // Validate the settings
 function loglib_validate_settings($input) {
-    // Add validation logic here if needed
     return $input;
 }
 
@@ -105,7 +104,7 @@ function loglib_inject_html_tag() {
     $host=isset($data->host)?$data->host:"https://loglib.io";
     $id=isset($data->id)?$data->id:"";
     
-    // https://loglib-next13.vercel.app/
+    // https://loglib.io
     echo '<script>
     const r = window.document.createElement("script");
     r.type = "text/javascript";
