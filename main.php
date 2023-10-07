@@ -105,17 +105,7 @@ function loglib_inject_html_tag() {
     $id=isset($data->id)?$data->id:"";
     
     // https://loglib.io
-    echo '<script>
-    const r = window.document.createElement("script");
-    r.type = "text/javascript";
-    r.async = !0;
-    r.src =
-      "https://cdn.jsdelivr.net/npm/@loglib/tracker@latest/dist/index.global.js";
-    const a = document.getElementsByTagName("script")[0];
-    a.parentNode.insertBefore(r, a);
-    r.onload = () => {
-      loglib.record({ host:"'. $host .'",id:"'.$id.'"});
-    };
-  </script>';
+    echo '<script src="https://cdn.jsdelivr.net/npm/@loglib/tracker@latest/dist/index.global.js" data-id="'.$id.'"></script>';
+ 
 }
 add_action('wp_head', 'loglib_inject_html_tag');
